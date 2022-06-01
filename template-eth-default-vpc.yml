@@ -39,7 +39,17 @@ Parameters:
     Type: Number
     Default: 1000
     MinValue: 0
-
+    
+KeyPairName: 
+    Description: Name of EC2 key pair assigned to instances.
+    Type: String
+    
+LaunchTemplate:
+  Type: AWS::EC2::LaunchTemplate
+  Properties:
+    ...
+    KeyName: !Ref KeyPairName
+    
   EthWallet:
     Type: String
     Description: Ethereum Wallet Address
